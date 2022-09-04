@@ -1,0 +1,13 @@
+---
+php:
+    brew:
+        packages:
+            - php71
+            - php71-mcrypt
+            - php71-xdebug
+            - php71-msgpack
+            - php71-pcntl
+            - php-code-sniffer
+            - composer
+            - phpmd
+            - phpunit

@@ -1,0 +1,6 @@
+---
+# PHP
+
+- name: Install packages
+  homebrew: name={{ item }}
+  with_items: '{{ php.brew.packages }}'

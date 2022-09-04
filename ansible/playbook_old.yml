@@ -1,0 +1,12 @@
+---
+- hosts: dev_machine
+  become_method: sudo
+
+  roles:
+    - brew
+    - shell
+    - osx
+    - dotfiles
+    - tmux
+    - brew-php
+    - npm

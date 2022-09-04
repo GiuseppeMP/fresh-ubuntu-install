@@ -1,0 +1,16 @@
+npm:
+    global:
+        - bash-language-server
+        - bower
+        - csslint
+        - dockerfile-language-server-nodejs
+        - gulp
+        - javascript-typescript-langserver
+        - js-yaml
+        - jshint
+        - jsonlint
+        - serverless
+        - tslint
+        - typescript
+        - typescript-formatter
+        - vscode-css-languageserver-bin

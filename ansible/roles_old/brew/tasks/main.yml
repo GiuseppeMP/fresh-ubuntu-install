@@ -1,0 +1,25 @@
+---
+# Homebrew
+
+- name: Make sure we're using the latest Homebrew
+  homebrew: update_homebrew=yes
+
+- name: Upgrade any already-installed formulae
+  homebrew: upgrade_all=yes
+
+- name: Add taps
+  homebrew_tap: tap={{ item }}
+  with_items: '{{ homebrew.taps }}'
+
+- name: Remove Homebrew taps with duplicates
+  homebrew_tap: tap={{ item }} state=absent
+  with_items: '{{ homebrew.duplicate_taps }}'
+
+- name: Install packages
+  homebrew: name='{{ homebrew.packages }}'
+
+- name: Install casks
+  homebrew_cask: name={{ item }}
+  environment:
+    HOMEBREW_CASK_OPTS: "--appdir={{ homebrew.application_dir }}"
+  with_items: '{{ homebrew.casks }}'
