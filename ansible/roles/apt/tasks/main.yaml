@@ -1,0 +1,45 @@
+---
+# APT
+
+- name: Get GPG Keys
+  shell: 
+    cmd: "{{ item }}"
+    warn: false
+  with_items: '{{ apt.gpg_keys }}'
+  
+- name: Add Repositories
+  shell: 
+    cmd: "{{ item }}"
+    warn: false
+  with_items: '{{ apt.repositories }}'
+
+- name: Update repositories
+  shell: apt update -y
+  become: yes
+
+- name: Upgrade all packages
+  shell: apt upgrade -y
+  become: yes
+
+- name: Clean and autoremove unnecessary packages
+  shell: apt clean autoremove -y
+  become: yes
+
+- name: Install dependencies packages
+  shell: apt install {{ item }} -y
+  with_items: 
+    - '{{ apt.base_packages }}'
+  become: yes
+
+- name: Install Packages
+  shell: apt install {{ item }} -y
+  with_items: 
+    - '{{ apt.packages }}'
+  become: yes
+
+- name: Run custom scripts packages
+  shell: 
+    cmd: "{{ item }}"
+    warn: false
+  with_items: '{{ apt.script_packages }}'
+  become: yes

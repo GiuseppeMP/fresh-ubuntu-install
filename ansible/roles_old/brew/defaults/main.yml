@@ -1,0 +1,59 @@
+homebrew:
+    taps:
+        - heroku/brew
+        - homebrew/cask
+        - homebrew/cask-fonts
+
+    duplicate_taps:
+        - caskroom/fonts
+
+    packages:
+        - ack
+        - ag
+        - bash
+        - bash-completion
+        - ctags
+        - deno
+        - direnv
+        - fzf
+        - git
+        - go
+        - hadolint
+        - hashicorp/tap/terraform-ls
+        - heroku
+        - hub
+        - neovim
+        - node@12
+        - openjdk
+        - pandoc
+        - python
+        - rainbarf
+        - reattach-to-user-namespace
+        - ruby
+        - stow
+        - terraform
+        - tmux
+        - vim
+        - vimpager
+        - wget
+        - yarn
+        - zsh
+        - zsh-completions
+
+    application_dir: ~/Applications
+
+    casks:
+        - appcleaner
+        - dropbox
+        - fantastical
+        - font-jetbrains-mono
+        - keybase
+        - kitty
+        - pocket-casts
+        - rocket
+        - selfcontrol
+        - signal
+        - slack
+        - typora
+        - vimr
+        - visual-studio-code

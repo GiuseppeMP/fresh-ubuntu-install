@@ -1,0 +1,26 @@
+apt:
+  gpg_keys:
+    - "curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -"
+    - 'wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg     | gpg --dearmor     | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg'
+  repositories:
+    - 'curl -fsSL https://download.opensuse.org/repositories/home:jstaf/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_jstaf.gpg > /dev/null'
+    - 'echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list'
+    - 'echo "deb http://download.opensuse.org/repositories/home:/jstaf/xUbuntu_22.04/ /" | sudo tee /etc/apt/sources.list.d/home:jstaf.list'
+    - 'echo "deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main"     | sudo tee /etc/apt/sources.list.d/vscodium.list'
+    - 'echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list'
+  base_packages:
+    - curl openssl dkms git zsh
+    - gcc make cmake build-essential 
+    - adb usbmuxd dnsmasq bc
+    - snapd
+     ## - hostapd  (criar task só pra isso)
+  script_packages:
+    - 'curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash'
+    - 'yes "y" |  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+  packages:
+    - gnome-terminal 
+    - libkf5config-dev libkdecorations2-dev libqt5x11extras5-dev qtdeclarative5-dev extra-cmake-modules 
+    - libkf5guiaddons-dev libkf5configwidgets-dev libkf5windowsystem-dev libkf5coreaddons-dev libkf5iconthemes-dev gettext qt3d5-dev
+    - spotify-client speedtest obs-studio codium notion-app yakuake draw.io bluez-hcidump
+    - 
+
