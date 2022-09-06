@@ -3,5 +3,6 @@
   become_method: sudo
 
   roles:
+    - droidcam
     - apt
     - shell
