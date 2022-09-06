@@ -31,6 +31,13 @@
     - '{{ apt.base_packages }}'
   become: yes
 
+- name: Run root custom scripts packages
+  shell: 
+    cmd: "{{ item }}"
+    warn: false
+  with_items: '{{ apt.root_script_packages }}'
+  become: no
+
 - name: Run custom scripts packages
   shell: 
     cmd: "{{ item }}"
