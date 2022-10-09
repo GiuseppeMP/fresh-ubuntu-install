@@ -1,0 +1,20 @@
+
+---
+
+# KDE / Setups
+
+- name: Install Lightly KDE
+  shell: |
+    if [ ! -d ~/.build/Lightly ]; then \
+    mkdir -p ${HOME}/.build/Lightly \
+    cd ${HOME}/.build/Lightly \
+    git clone --single-branch --depth=1 https://github.com/Luwx/Lightly.git \
+    cd Lightly && mkdir build && cd build \
+    cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib -DBUILD_TESTING=OFF .. \
+    make \
+    sudo make install; \
+    fi
+  become: no
+
+
+

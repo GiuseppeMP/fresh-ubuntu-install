@@ -3,7 +3,8 @@
   become_method: sudo
 
   roles:
-    - vim-workspace
-    - droidcam
-    - apt
-    - shell
+    # - kde
+     - vim-workspace
+    # - droidcam
+     - apt
+     - shell
