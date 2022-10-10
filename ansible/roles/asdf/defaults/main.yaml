@@ -1,0 +1,27 @@
+asdf:
+  plugins:
+    - asdf plugin-add java https://github.com/halcyon/asdf-java.git
+    - asdf plugin-add python
+    - asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+    - asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+    - asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  java:
+    - corretto-11.0.16.9.1
+    - corretto-17.0.4.9.1
+    - corretto-18.0.1.10.1
+    - corretto-8.342.07.1
+    - graalvm-22.2.0+java11
+    - graalvm-22.2.0+java17
+    - zulu-14.29.23
+  python:
+    - 2.7.18
+    - 3.10.7
+  ruby:
+    - 3.1.2
+  nodejs:
+    -   14.20.0
+    - 16.17.0
+    - lts-fermium
+    - lts-gallium
+
+

@@ -1,0 +1,46 @@
+---
+
+# Neovim / Workspace
+
+- name: Install asdf
+  shell: |
+    cd /tmp/ \
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2 \
+    echo ". $HOME/.asdf/asdf.sh" >> ~/.zshrc
+  become: no
+
+
+- name: Add asdf plugins
+  shell: 
+    cmd: "{{ item }}"
+    warn: false
+  with_items: '{{ asdf.plugins }}'
+  become: no
+
+- name: Install Java Versions
+  shell:
+    cmd: asdf install java {{item}}
+    warn: false
+  with_items: '{{ asdf.java }}'
+  become: no
+
+- name: Install Python Versions
+  shell:
+    cmd: asdf install python {{item}}
+    warn: false
+  with_items: '{{ asdf.python }}'
+  become: no
+
+- name: Install Nodejs Versions
+  shell:
+    cmd: asdf install nodejs {{item}}
+    warn: false
+  with_items: '{{ asdf.nodejs }}'
+  become: no
+
+- name: Install Ruby Versions
+  shell:
+    cmd: asdf install ruby {{item}}
+    warn: false
+  with_items: '{{ asdf.ruby }}'
+  become: no
